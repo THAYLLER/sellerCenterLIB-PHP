@@ -9,9 +9,14 @@ require_once "../../../../SRC/genericGet.php";
 
 class getOrder extends \SRC\get\genericGet
 {
-	public function call()
+	public function call($dt)
 	{
-		$this->CreatedAfterSet('2016-01-01 00:00:00');
+		$this->CreatedAfterSet($dt);
 		return $this->search('GetOrders');
 	}
 }
+
+$get = new \SRC\TEST\SALES_ORDER\GET\getOrder;
+$get->call('2016-01-01 00:00:00');
+
+$array = simplexml_load_string($xml[0])->Body->Orders->Order;

@@ -16,7 +16,7 @@ class genericPost extends \SRC\base
     function __construct(){
         $this->xml='';
         $this->dtFim='';
-        $this->iniciar();
+        $this->start();
     }
     public function endDate()
     {
@@ -68,8 +68,8 @@ class genericPost extends \SRC\base
 	        	
 		 	$this->actionSet($tipo);
         	$this->actionGet();
-	        $this->currentDate();
-	        $this->endDate();
+	        $this->CreatedAfterSet();
+	        $this->CreatedBeforeSet();
 	        $this->toChargeParameters();
 	        $this->url();
 		    return $this->callApi('post',$xmlRetorno);

@@ -7,7 +7,7 @@
 */
 namespace src;
 
-require_once "config/config.php";
+require_once "CONFIG/config.php";
 //require_once "config/error.php";
 
 abstract class base
